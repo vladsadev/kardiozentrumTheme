@@ -1,0 +1,25 @@
+@keyframes scaleHover {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+/*.fade-in-up {*/
+/*    animation: fadeInUp 0.8s ease-out forwards;*/
+/*}*/
+
+.card-hover:hover {
+    animation: scaleHover 0.3s ease-in-out forwards;
+}
+
+.card-hover {
+    transition: all 0.3s ease-in-out;
+}
+
+.card-hover:hover {
+    /*transform: translateY(-8px);*/
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}

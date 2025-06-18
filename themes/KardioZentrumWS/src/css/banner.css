@@ -1,0 +1,17 @@
+.banner-gradient {
+    background: linear-gradient(90deg, #335C67 0%, #669BBC 100%);
+}
+.section-transition {
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+}
+.section-transition::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: linear-gradient(to bottom left, transparent 49%, white 50%);
+}

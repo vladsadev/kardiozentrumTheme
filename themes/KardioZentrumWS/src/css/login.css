@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background: #FDF0D5;
+}
+
+.login h1 a {
+    color: darkblue;
+    font-size: 32px;
+    font-family: "Roboto", serif;
+    font-weight: 300;
+    background-image: none;
+    width: auto;
+    height: auto;
+    text-indent: 0;
+}
+
+.wp-core-ui .button-primary {
+    color: #FFF3B0;
+    background: #9E2A2B;
+}
+
+.wp-core-ui .button-primary:hover {
+    color: #FFF3B0;
+    background: #540B0E;
+}
+
+#nav {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#nav::before {
+    content: "¿No tienes una cuenta? registrate a continuacion: ";
+    color: #666;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+}
+
+#nav > a.wp-login-register {
+    color: #E54E5D;
+
+    font-size: 16px;
+    text-decoration: underline;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+#nav > a.wp-login-register:hover {
+    color: #9E2A2B;
+}
+
+#nav > a.wp-login-lost-password {
+    color: #E54E5D;
+}
+
+#backtoblog > a {
+    font-size: 16px;
+}

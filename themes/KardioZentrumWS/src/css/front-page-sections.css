@@ -1,0 +1,487 @@
+/* Estilos personalizados para el slider */
+.slider {
+    position: relative;
+    /*top:-120px;*/
+    /*width: 100%;*/
+    /*height: 85vh;*/
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Overlay para el slider */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(10, 50, 145, 0.8);*/
+    /*background-color: rgba(51, 92, 103, 0.75);*/
+    /*background-color: rgba(158, 42, 43, 0.55);*/
+    /*background-color: rgba(84, 11, 14, 0.65); */
+    /*background-color: rgba(0, 48, 73, 0.65);*/
+    background-color: rgba(0, 48, 73, 0.35);
+
+
+}
+
+/* Indicadores del slider */
+.slider-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    gap: 10px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: white;
+}
+
+/* Controles del slider (flechas) */
+.slider-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /*display: flex;*/
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.slider-control:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.slider-control.prev {
+    left: 20px;
+}
+
+.slider-control.next {
+    right: 20px;
+}
+
+/******* Doctors *******/
+:root {
+    --primary-gradient: #335c67;
+    --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    --card-shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --border-radius: 16px;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.5);
+
+    /* Scroll settings */
+    --scroll-speed-normal: 60s;
+    --scroll-speed-fast: 30s;
+    --scroll-speed-slow: 90s;
+}
+
+/* Section Principal */
+.medical-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.medical-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+    z-index: 0;
+}
+
+/* Header de la sección */
+.section-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 800;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.section-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--primary-gradient);
+    margin: 0 auto 24px;
+    border-radius: 2px;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+
+.scroller[data-animated="true"] {
+    mask: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(0, 0, 0, 1) 10%,
+            rgba(0, 0, 0, 1) 90%,
+            transparent 100%
+    );
+    -webkit-mask: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(0, 0, 0, 1) 10%,
+            rgba(0, 0, 0, 1) 90%,
+            transparent 100%
+    );
+}
+
+.scroller__inner {
+    display: flex;
+    gap: 24px;
+    padding: 20px 0;
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    animation: scroll var(--_animation-duration, var(--scroll-speed-normal)) var(--_animation-direction, forwards) linear infinite;
+    will-change: transform;
+}
+
+/* Controles de dirección y velocidad */
+.scroller[data-direction="right"] {
+    --_animation-direction: reverse;
+}
+
+.scroller[data-speed="fast"] {
+    --_animation-duration: var(--scroll-speed-fast);
+}
+
+.scroller[data-speed="slow"] {
+    --_animation-duration: var(--scroll-speed-slow);
+}
+
+@keyframes scroll {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(calc(-50% - 12px), 0, 0);
+    }
+}
+
+/* Doctor Cards */
+.doctor-card {
+    flex: 0 0 320px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    position: relative;
+    cursor: pointer;
+}
+
+.doctor-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.doctor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.doctor-image {
+    height: 180px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.doctor-icon {
+    font-size: 4rem;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+
+.status-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 3;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.doctor-content {
+    padding: 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.doctor-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 4px;
+}
+
+.doctor-specialty {
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.doctor-description {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.doctor-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.doctor-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.star-icon {
+    color: #fbbf24;
+}
+
+.profile-btn {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+}
+
+.profile-btn:hover {
+    color: #764ba2;
+    transform: translateX(4px);
+}
+
+/* Gradientes para especialidades */
+.ginecologia {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.neurocirugia {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.traumatologia {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.pediatria {
+    background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+}
+
+.oncologia {
+    background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+}
+
+.cardiologia {
+    background: linear-gradient(135deg, #ef4444 0%, #ec4899 100%);
+}
+
+.ginecologia-text {
+    color: #e91e63;
+}
+
+.neurocirugia-text {
+    color: #2196f3;
+}
+
+.traumatologia-text {
+    color: #00bcd4;
+}
+
+.pediatria-text {
+    color: #9c27b0;
+}
+
+.oncologia-text {
+    color: #ff9800;
+}
+
+.cardiologia-text {
+    color: #f44336;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .doctor-card {
+        flex: 0 0 280px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .scroll-controls {
+        gap: 8px;
+    }
+
+    .control-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .scroller[data-animated="true"] .scroller__inner {
+        animation: none;
+    }
+
+    .scroller[data-animated="true"] {
+        mask: none;
+        -webkit-mask: none;
+    }
+
+    .doctor-card:hover {
+        transform: none;
+    }
+}
+
+/****** Testimonios *********/
+.testimonial-container {
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+}
+
+.testimonial-track {
+    display: flex;
+    transition: transform 0.5s ease-out;
+}
+
+.testimonial-item {
+    flex: 0 0 100%;
+    transition: opacity 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .testimonial-item {
+        flex: 0 0 33.333%;
+    }
+}
+
+.testimonial-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+    display: inline-block;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.testimonial-dot.active {
+    background-color: #10b981;
+}
+
+.quote-mark {
+    font-size: 160px;
+    line-height: 0;
+    position: relative;
+    top: 80px;
+    opacity: 0.2;
+}

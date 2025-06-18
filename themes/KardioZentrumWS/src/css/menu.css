@@ -1,0 +1,161 @@
+/* Estilos para el mega menu */
+.mega-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    /*background: white;*/
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.has-mega-menu:hover .mega-menu {
+    display: block;
+}
+
+
+/* Estilos para los elementos del mega menu */
+.mega-menu h3 {
+    color: #9E2A2B;
+    /* red-light en Tailwind *9E2A2B/
+       font-weight: bold;
+       margin-bottom: 1rem;
+       padding-bottom: 0.5rem;
+       border-bottom: 1px solid #e5e7eb; /* gray-200 en Tailwind */
+}
+
+.mega-menu ul {
+    margin-top: 0.5rem;
+}
+
+.mega-menu a {
+    color: #9E2A2B; /* sky-500 en Tailwind */
+    transition: color 0.2s ease;
+    display: block;
+    padding: 0.25rem 0;
+}
+
+.mega-menu a:hover {
+    color: #540B0E; /* sky-700 en Tailwind */
+    font-weight: bold;
+}
+
+/* Estilos específicos para móvil (768)*/
+@media (max-width: 834px) {
+    .mega-menu {
+        position: static;
+        box-shadow: none;
+        padding-left: 1.5rem;
+    }
+
+    .mega-menu .grid {
+        display: block;
+    }
+
+    .mega-menu .grid > div {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Menú móvil */
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .primary-menu-container {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background-color: #9E2A2B; /* red-light Tailwind */
+        z-index: 1000;
+    }
+
+    .primary-menu-container.active {
+        display: block;
+    }
+
+    .primary-menu-container ul {
+        flex-direction: column;
+    }
+
+    .primary-menu-container li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Indicador para submenú en móvil */
+    .menu-item-has-children > a::after {
+        content: '\25BC';
+        font-size: 0.7em;
+        margin-left: 0.5rem;
+        transition: transform 0.2s ease;
+    }
+
+    .menu-item-has-children.submenu-open > a::after {
+        transform: rotate(180deg);
+    }
+}
+
+/* Estilos para pantallas medianas y grandes (769) */
+@media (min-width: 835px) {
+    .mobile-menu-toggle {
+        display: none;
+    }
+
+    .primary-menu-container {
+        display: block !important;
+    }
+
+    /* Estilos dropdown para elementos normales */
+    .group:hover .group-hover\:block {
+        display: block;
+    }
+}
+
+/* Transiciones de hover para elementos del menú */
+.hover\:bg-sky-600:hover {
+    background-color: #0284c7; /* sky-600 en Tailwind */
+    transition: background-color 0.2s ease;
+}
+
+/* Estilos para el botón toggle del menú móvil */
+.mobile-menu-toggle {
+    padding: 0.2rem 0.5rem;
+    /*background: transparent;*/
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/*!* Estilos para el menú sticky *!*/
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background-color: rgba(34, 59, 67, 0.3);
+    animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.show-top-menu {
+    display: block;
+}
+
+.hidden-top-menu {
+    display: none;
+}
+
+/*.mobile-menu-toggle svg {*/
+/*    width: 1.5rem;*/
+/*    height: 1.5rem;*/
+/*}*/

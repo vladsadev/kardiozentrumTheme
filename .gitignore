@@ -1,0 +1,13 @@
+.git
+.idea
+ai1wm-backups
+uploads
+upgrade
+upgrade-temp-backup
+/index.php
+/themes/KardioZentrumWS/node_modules
+/themes/KardioZentrumWS/.idea
+/themes/KardioZentrumWS/.env
+/plugins/index.php
+/themes/index.php
+
