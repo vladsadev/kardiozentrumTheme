@@ -18,13 +18,13 @@ py-3">
                     <i class="ri-cellphone-fill"></i>
                     <span class="text-red-500 text-shadow-md text-shadow-blue-950/90 lg:tracking-wider
                         font-bold">
-                            775 99257 - EMERGENCIAS
+                            715 62862 - EMERGENCIAS
                         </span>
                 </div>
                 <div class="md:space-x-1 text-xs sm:text-base text-white lg:text-[17px] text-slate-100">
                     <i class="ri-whatsapp-line"></i>
                     <a class="hover:text-yellow-light hover:font-bold animate-heartbeat inline-flex transition-colors duration-300 focus:ring-2 focus:ring-offset-2 focus:outline-none"
-                       href="https://wa.me/<?php echo '77599257' ?>?text=Hola%2C%20me%20gustaría%20más%20información."
+                       href="https://wa.me/<?php echo '71562862' ?>?text=Hola%2C%20me%20gustaría%20más%20información."
                        target="_blank">
                         775 99257
                     </a>
